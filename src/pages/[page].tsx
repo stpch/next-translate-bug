@@ -17,11 +17,9 @@ const Page: FC<Props> = props => {
             <Head>
                 <title>next-translate bug example</title>
             </Head>
-            <main>
-                <div>Translation: {t('common:test')}</div>
-                <div>Fallback rendering: {String(isFallback)}</div>
-                <div>Page URL param: {props.page}</div>
-            </main>
+            <div>Translation: {t('common:test')}</div>
+            <div>Fallback rendering: {String(isFallback)}</div>
+            <div>Page URL param: {props.page}</div>
         </>
     )
 }
