@@ -1,3 +1,4 @@
+import useTranslation from 'next-translate/useTranslation'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { GetStaticPaths, GetStaticProps } from 'next/types'
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const Page: FC<Props> = props => {
+    const { t } = useTranslation()
     const { isFallback } = useRouter()
 
     return (
@@ -16,6 +18,7 @@ const Page: FC<Props> = props => {
                 <title>next-translate bug example</title>
             </Head>
             <main>
+                <div>Translation: {t('common:test')}</div>
                 <div>Fallback rendering: {String(isFallback)}</div>
                 <div>Page URL param: {props.page}</div>
             </main>
